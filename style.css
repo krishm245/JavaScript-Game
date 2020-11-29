@@ -1,0 +1,138 @@
+* {
+  margin: 0px;
+  padding: 0%;
+  box-sizing: border-box;
+}
+:root {
+  --cell-size: 100px;
+  --symbol-size: calc(var(--cell-size) * 0.8);
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+.instructions p {
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.title {
+  text-align: center;
+  background-color: darkblue;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.title h2 {
+  text-transform: uppercase;
+  color: yellow;
+}
+
+.board {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background-color: blanchedalmond;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: none;
+}
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell.x::before,
+.cell.x::after {
+  position: absolute;
+  content: "";
+  width: calc(var(--symbol-size) * 0.15);
+  height: var(--symbol-size);
+  background-color: black;
+}
+
+.cell.x::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+  position: absolute;
+  content: "";
+}
+.cell.o::after {
+  width: calc(var(--symbol-size) * 0.75);
+  height: calc(var(--symbol-size) * 0.75);
+  border-radius: 50%;
+  background-color: blanchedalmond;
+}
+
+.cell.o::before {
+  width: calc(var(--symbol-size) * 1);
+  height: calc(var(--symbol-size) * 1);
+  border-radius: 50%;
+  background-color: black;
+}
+
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+#playAgain {
+  width: 150px;
+  height: 80px;
+  background-color: green;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 30px;
+}
+.message {
+  color: white;
+  font-size: 5rem;
+}
+.resultScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resultScreen.show {
+  display: flex;
+}

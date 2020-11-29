@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic tac toe</title>
+
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h2>Tic Tac Toe</h2>
+      </div>
+    </header>
+
+    <div class="instructions">
+      <p>
+        The objective of X and O is to get your symbol in any of the possible
+        row combination or any of the possible column combination or even any of
+        the 2 diagonals.
+      </p>
+
+      <p>
+        The first person to get a matching pattern wins.Start by clicking any of
+        the grid tiles.
+      </p>
+
+      <p id="playerTurn"></p>
+
+      </div>
+    </div>
+
+    <div class="board x o">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+
+    <div id="resultScreen" class="resultScreen">
+      <div class="message" result-message>X wins</div>
+      <button id="playAgain">Play Again</button>
+    </div>
+  </body>
+</html>
